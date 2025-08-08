@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment section design</title>
+    <link rel="stylesheet" href="savestylecomment.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Post a comment</h1>
+        <div class="head"><span id="comment-count">0 </span> comments</div>
+        <p>We are happy to hear from you</p>
+        <div class="comments"></div>
+        <div class="commentbox">
+            <img src="image/user.png" alt="user">
+            <div class="contents">
+                <h2>Comments as:</h2>
+                <input type="text" value="anonymous" class="anonymous-input">
+                <div class="comment-input">
+                    <input type="text" placeholder="Enter comment" class="usercomment">
+                    <div class="btns">
+                        <button type="sumbit" disabled id="publish">Publish</button>
+                        <div class="notification">
+                            <input type="checkbox" class="notifyInput"><label for="notifyInput">Notify me</label>
+                        </div>
+                    </div>
+                </div>
+                <p>This site is protected by reCAPTCHA and the Google <a href="#">privacy policy</a> and <a href="#">Terms of services</a> apply.</p>
+            </div>
+        </div>
+    </div>
+    <script src="savescriptcomment.js"></script>
+</body>
+</html>

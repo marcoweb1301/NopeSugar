@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 30vw;
+    padding: 30px;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.container h1 {
+    font-size: 22px;
+}
+
+.head {
+    margin: 7px 0;
+    color: gray;
+}
+
+.container p {
+    font-size: 16px;
+    color: gray;
+}
+
+.commentbox {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.commentbox img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.contents {
+    width: 100%;
+}
+
+.contents h2 {
+    font-size: 16px;
+}
+
+.anonymous-input {
+    border: none;
+    outline: none;
+    margin: 5px 0;
+    color: #808080;
+    padding: 10px;
+}
+
+.usercomment {
+    border: none;
+    outline: none;
+    padding: 10px;
+    padding-left: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+    width: 95%;
+    color: #808080;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btns button {
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btns button.able {
+    background: blue;
+    color: #fff;
+}
+
+.notification label {
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+.contents p {
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+.contents p a {
+    color: blue;
+    text-decoration: none;
+}
+
+.parent {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.parent img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.parent h3 {
+    font-size: 14px;
+}
+
+.parent p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.engagements {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.engagements img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.parent span {
+    font-size: 15px;
+    color: gray;
+}
+
+input.email, input.password {
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.8);
+    outline: none;
+    padding: 3px;
+}
+
+.loginbtn {
+    padding: 10px;
+    background-color: #f54842;
+    color: white;
+    border: none;
+    width: 45%;
+    border-radius: 5px;
+}
+
+.loginbtn:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.signin_google {
+    border: 2px solid gray;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 1040px) {
+    .container {
+        width: 50vw;
+    }
+}
+@media (max-width: 620px) {
+    .container {
+        width: 55vw;
+    }
+}
+@media (max-width: 570px) {
+    .container {
+        width: 60vw;
+    }
+}
+@media (max-width: 510px) {
+    .container {
+        width: 70vw;
+    }
+}
+@media (max-width: 440px) {
+    .container {
+        width: 85vw;
+    }
+}
+@media (max-width: 370px) {
+    .container {
+        width: 88vw;
+    }
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="styleu1.css">
+    <link rel="stylesheet" href="stylecomment.css">
+    <!-- <link rel="stylesheet" href="stylecomment2.css"> -->
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon" />
+    <script src="https://kit.fontawesome.com/02b1a58c03.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+     <!-- Glucose Calculator -->
+      <center><h1 style="margin-top: 30px; font-size: 30px;">Monitor konsumsi gula harian mu !</h1></center>
+      <div class="header">
+      <p class="logo" style="font-size: 22px">NopeSugar</p>
+      <div class="cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <p id="count" style="background-color: #f54842">0</p>
+      </div>
+    </div>
+    <div class="container">
+      <div id="root"></div>
+      <div class="sidebar">
+        <div class="head" style="background: #f54842"><p>Konsumsi Gula</p></div>
+        <div id="cartItem">Keranjang anda kosong</div>
+        <div class="foot">
+          <h3>Total</h3>
+          <h2 id="total" style="color: #f54842;">0 gram</h2>
+        </div>
+        <button onclick="gluAlert()">Cek status konsumsi gula mu</button><br><br>
+        <button onclick="chart_js()" onclick="location.reload()">Masukkan data ke grafik</button><br><br>
+        <button onclick="logout()">Logout</button>
+        <p id="p_alert"></p>
+      </div>
+    </div>
+    
+    <!-- Grafik monitoring-->
+    <div class="container_chart">
+      <canvas id="myChart" style="width: 38vw; height:38vw;"></canvas>
+    </div>
+
+    
+    <!-- Comment dokter -->
+     <center><h1 style="margin-top: 30px; font-size: 30px;">Konsultasi dengan dokter terbaik</h1></center>
+    <center>
+    <div class="container_testimoni">
+        <div class="item">
+          <img src="image/testimonialimg_1.jpg" alt="" /><br />
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <h3>Dokter A</h3>
+          <p>Usia: 35 tahun</p>
+          <p>spesialisasi: dokter spesialis endokrin</p>
+          <button class="btn_liatkarya" data-modal-target="#modal1">Lihat komentar !</button><br><br>
+          <button>Atur jadwal konsul</button>
+        </div>
+        <div class="item">
+          <img src="image/testimonialimg_2.jpg" alt="" /><br />
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <h3>Dokter B</h3>
+          <p>Usia: 35 tahun</p>
+          <p>spesialisasi: dokter spesialis endokrin</p>
+          <button class="btn_liatkarya" data-modal-target="#modal2">Lihat komentar !</button><br><br>
+          <button>Atur jadwal konsul</button>
+        </div>
+        <div class="item">
+          <img src="image/testimonialimg_3.jpg" alt="" /><br />
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <h3>Dokter  C</h3>
+          <p>Usia: 35 tahun</p>
+          <p>spesialisasi: dokter spesialis endokrin</p>
+          <button class="btn_liatkarya" data-modal-target="#modal3">Lihat komentar !</button><br><br>
+          <button>Atur jadwal konsul</button>
+        </div>
+        <div class="item">
+          <img src="image/testimonialimg_4.jpg" alt="" /><br />
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <h3>Dokter D</h3>
+          <p>Usia: 35 tahun</p>
+          <p>spesialisasi: dokter spesialis endokrin</p>
+          <button class="btn_liatkarya" data-modal-target="#modal4">Lihat komentar !</button><br><br>
+          <button>Atur jadwal konsul</button>
+        </div>
+        <div class="item">
+          <img src="image/testimonialimg_5.jpg" alt="" /><br />
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <h3>Dokter E</h3>
+          <p>Usia: 35 tahun</p>
+          <p>spesialisasi: dokter spesialis endokrin</p>
+          <button class="btn_liatkarya" data-modal-target="#modal5">Lihat komentar !</button><br><br>
+          <button>Atur jadwal konsul</button>
+        </div>
+        <div class="item">
+          <img src="image/testimonialimg_6.jpg" alt="" /><br />
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <h3>Dokter F</h3>
+          <p>Usia: 35 tahun</p>
+          <p>spesialisasi: dokter spesialis endokrin</p>
+          <button class="btn_liatkarya" data-modal-target="#modal6">Lihat komentar !</button><br><br>
+          <button>Atur jadwal konsul</button>
+        </div>
+      </div>
+    </center>
+
+     <!-- Modal -->
+    <div class="modal" id="modal1">
+      <div class="modal-header">
+        <div class="title">Komentar tentang dokter A</div>
+        <button data-close-button class="close-button">X</button>
+      </div>
+        <div class="heads"><span id="comment-count" style="color: black;">0 </span> comments</div>
+        <div class="comments"></div>
+        <div class="commentbox">
+            <img src="image/user.png" alt="user">
+            <div class="contents">
+                <h2 style="color: black;">Komentar sebagai:</h2>
+                <input type="text" value="anonymous" class="anonymous-input">
+                <div class="comment-input">
+                    <input type="text" placeholder="Masukkan komentar" class="usercomment">
+                    <div class="btns">
+                        <button type="sumbit" disabled id="publish">Publish</button>
+                        <div class="notification">
+                            <input type="checkbox" class="notifyInput"><label for="notifyInput">Notify me</label>
+                        </div>
+                    </div>
+                </div>
+                <p>This site is protected by reCAPTCHA and the Google <a href="#">privacy policy</a> and <a href="#">Terms of services</a> apply.</p>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    
+    <div class="modal" id="modal2">
+      <div class="modal-header">
+        <div class="title">Komentar tentang dokter B</div>
+        <button data-close-button class="close-button">X</button>
+      </div>
+            <div class="heads"><span id="comment-count" style="color: black;">0 </span> comments</div>
+        <div class="comments"></div>
+        <div class="commentbox">
+            <img src="image/user.png" alt="user">
+            <div class="contents">
+                <h2 style="color: black;">Komentar sebagai:</h2>
+                <input type="text" value="anonymous" class="anonymous-input">
+                <div class="comment-input">
+                    <input type="text" placeholder="Masukkan komentar" class="usercomment">
+                    <div class="btns">
+                        <button type="sumbit" disabled id="publish">Publish</button>
+                        <div class="notification">
+                            <input type="checkbox" class="notifyInput"><label for="notifyInput">Notify me</label>
+                        </div>
+                    </div>
+                </div>
+                <p>This site is protected by reCAPTCHA and the Google <a href="#">privacy policy</a> and <a href="#">Terms of services</a> apply.</p>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    
+
+   
+    <div class="modal" id="modal3">
+      <div class="modal-header">
+        <div class="title">Komentar tentang dokter C</div>
+        <button data-close-button class="close-button">X</button>
+      </div>
+            <div class="heads"><span id="comment-count" style="color: black;">0 </span> comments</div>
+        <div class="comments"></div>
+        <div class="commentbox">
+            <img src="image/user.png" alt="user">
+            <div class="contents">
+                <h2 style="color: black;">Komentar sebagai:</h2>
+                <input type="text" value="anonymous" class="anonymous-input">
+                <div class="comment-input">
+                    <input type="text" placeholder="Masukkan komentar" class="usercomment">
+                    <div class="btns">
+                        <button type="sumbit" disabled id="publish">Publish</button>
+                        <div class="notification">
+                            <input type="checkbox" class="notifyInput"><label for="notifyInput">Notify me</label>
+                        </div>
+                    </div>
+                </div>
+                <p>This site is protected by reCAPTCHA and the Google <a href="#">privacy policy</a> and <a href="#">Terms of services</a> apply.</p>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    
+
+    
+    <div class="modal" id="modal4">
+      <div class="modal-header">
+        <div class="title">Komentar tentang dokter D</div>
+        <button data-close-button class="close-button">X</button>
+      </div>
+            <div class="heads"><span id="comment-count" style="color: black;">0 </span> comments</div>
+        <div class="comments"></div>
+        <div class="commentbox">
+            <img src="image/user.png" alt="user">
+            <div class="contents">
+                <h2 style="color: black;">Komentar sebagai:</h2>
+                <input type="text" value="anonymous" class="anonymous-input">
+                <div class="comment-input">
+                    <input type="text" placeholder="Masukkan komentar" class="usercomment">
+                    <div class="btns">
+                        <button type="sumbit" disabled id="publish">Publish</button>
+                        <div class="notification">
+                            <input type="checkbox" class="notifyInput"><label for="notifyInput">Notify me</label>
+                        </div>
+                    </div>
+                </div>
+                <p>This site is protected by reCAPTCHA and the Google <a href="#">privacy policy</a> and <a href="#">Terms of services</a> apply.</p>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    
+
+    
+    <div class="modal" id="modal5">
+      <div class="modal-header">
+        <div class="title">Komentar tentang dokter E</div>
+        <button data-close-button class="close-button">X</button>
+      </div>
+            <div class="heads"><span id="comment-count" style="color: black;">0 </span> comments</div>
+        <div class="comments"></div>
+        <div class="commentbox">
+            <img src="image/user.png" alt="user">
+            <div class="contents">
+                <h2 style="color: black;">Komentar sebagai:</h2>
+                <input type="text" value="anonymous" class="anonymous-input">
+                <div class="comment-input">
+                    <input type="text" placeholder="Masukkan komentar" class="usercomment">
+                    <div class="btns">
+                        <button type="sumbit" disabled id="publish">Publish</button>
+                        <div class="notification">
+                            <input type="checkbox" class="notifyInput"><label for="notifyInput">Notify me</label>
+                        </div>
+                    </div>
+                </div>
+                <p>This site is protected by reCAPTCHA and the Google <a href="#">privacy policy</a> and <a href="#">Terms of services</a> apply.</p>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    
+
+    
+    <div class="modal" id="modal6">
+      <div class="modal-header">
+        <div class="title">Komentar tentang dokter F</div>
+        <button data-close-button class="close-button">X</button>
+      </div>
+            <div class="heads"><span id="comment-count" style="color: black;">0 </span> comments</div>
+        <div class="comments"></div>
+        <div class="commentbox">
+            <img src="image/user.png" alt="user">
+            <div class="contents">
+                <h2 style="color: black;">Komentar sebagai:</h2>
+                <input type="text" value="anonymous" class="anonymous-input">
+                <div class="comment-input">
+                    <input type="text" placeholder="Masukkan komentar" class="usercomment">
+                    <div class="btns">
+                        <button type="sumbit" disabled id="publish">Publish</button>
+                        <div class="notification">
+                            <input type="checkbox" class="notifyInput"><label for="notifyInput">Notify me</label>
+                        </div>
+                    </div>
+                </div>
+                <p>This site is protected by reCAPTCHA and the Google <a href="#">privacy policy</a> and <a href="#">Terms of services</a> apply.</p>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+   
+
+    <script src="scriptu1.js"></script>
+    <script src="scriptcomment.js"></script>
+    <!-- <script src="scriptcomment2.js"></script> -->
+</body>
+</html>

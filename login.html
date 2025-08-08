@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="stylelogin.css">
+</head>
+<body>
+        <center><div class="container">
+            <h1>Login</h1><br>
+            <label for="email">Email: </label><input type="email" name="email" class="email" required><br><br>
+            <label for="password">Password: </label><input type="password" class="password" required><br><br>
+            <button class="loginbtn" onclick="login()">Login</button><br><br>
+            <a class="signin_google" href="user1.html">
+                <img src="img/google.png" style="width: 15px;height: 15px; ;" onclick="test()"> Login dengan Google
+            </a>
+        </div></center>
+        
+
+        <script>
+            function login() {
+                alert("Kamu berhasil login!");
+                window.location.assign("user1.html");
+            }
+        </script>
+</body>
+</html>
